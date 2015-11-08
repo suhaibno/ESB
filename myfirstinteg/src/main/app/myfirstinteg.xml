@@ -12,6 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
         <expression-component doc:name="Create Customer Object"><![CDATA[
 flowVars.firstName = message.inboundProperties['http.query.params'].firstname;
 flowVars.lastName =  message.inboundProperties['http.query.params'].lastname;
+
 flowVars.ssn =  message.inboundProperties['http.query.params'].ssn;
 
 

@@ -12,7 +12,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
         <expression-component doc:name="Set Flow Variables"><![CDATA[flowVars.firstName = message.inboundProperties['http.query.params'].firstname;
 flowVars.lastName =  message.inboundProperties['http.query.params'].lastname;
 flowVars.ssn =  message.inboundProperties['http.query.params'].ssn;]]></expression-component>
-        <expression-component doc:name="Create Customer Object"><![CDATA[import  com.suhaibsoft.Customer;
+        <expression-component doc:name="Create Customer Object"><![CDATA[/**
+The traget of the expression is to create and intilize Customer object
+*/
+import  com.suhaibsoft.Customer;
 Customer customer  = new Customer();
 
 customer.setFirstName(flowVars.firstName);

@@ -7,6 +7,8 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private String SSN;
+	private List<Order> basket;
+	private double totalPrice;
 	
 	public String getSSN() {
 		return SSN;
@@ -14,8 +16,7 @@ public class Customer {
 	public void setSSN(String sSN) {
 		SSN = sSN;
 	}
-	private List<Order> basket;
-	private double totalPrice;
+	
 	public String getFirstName() {
 		return firstName;
 	}

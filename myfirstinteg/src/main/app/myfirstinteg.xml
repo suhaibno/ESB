@@ -9,9 +9,19 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="myfirstintegFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
-        <expression-component doc:name="Create Customer Object"><![CDATA[flowVars.firstName = message.inboundProperties['http.query.params'].firstname;
+        <expression-component doc:name="Set Flow Variables"><![CDATA[flowVars.firstName = message.inboundProperties['http.query.params'].firstname;
 flowVars.lastName =  message.inboundProperties['http.query.params'].lastname;
 flowVars.ssn =  message.inboundProperties['http.query.params'].ssn;]]></expression-component>
+        <expression-component doc:name="Create Customer Object"><![CDATA[import com.suhaibsoft.Customer ;
+Customer customer  = new Customer();
+
+customer.setFirstName(flowVars.firstName);
+customer.setLastName(flowVars.lastName);
+customer.setSSN(Integer.parseInt(flowVars.ssn));
+customer.setBasket(null)t;
+customer.setTotalPrice(0.0);
+
+payload = customer;]]></expression-component>
         <set-payload value="#[flowVars.firstName]" doc:name="Set Payload"/>
     </flow>
 </mule>

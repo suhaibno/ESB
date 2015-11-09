@@ -18,6 +18,7 @@ The traget of the expression is to create and intilize Customer object
 import  com.suhaibsoft.Customer;
 Customer customer  = new Customer();
 
+// initialize customer object
 customer.setFirstName(flowVars.firstName);
 customer.setLastName(flowVars.lastName);
 customer.setSSN(Integer.parseInt(flowVars.ssn));

@@ -1,0 +1,11 @@
+1- Use Composite & enricher & subflow 
+2- Async scope
+3- Call Restful web Service
+4- Call SOAP WS
+4.1- AQMP like RabbitMQ
+4.2- Reade from DB and write to DB
+5- Exception Handling
+6- Batch Job
+7- read and write on cloud application like facebook, twiter ....
+8-deploy application as stand alone
+9- 
